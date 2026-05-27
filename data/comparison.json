@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "title": "Custom AI vs ChatGPT for Business: Solution Comparison",
+    "description": "Structured comparison of building a custom AI solution versus using ChatGPT (or similar off-the-shelf LLM APIs) for enterprise business applications.",
+    "version": "1.0.0",
+    "updated": "2026-05-26",
+    "source": "https://swifttechco.com/comparisons/custom-ai-vs-chatgpt-business"
+  },
+  "solutions": {
+    "custom_ai": {
+      "name": "Custom AI Solution",
+      "description": "Purpose-built AI system using fine-tuned or RAG-augmented models, proprietary data pipelines, and custom UX integrated into existing workflows",
+      "examples": ["Fine-tuned open-source LLM", "RAG pipeline on proprietary data", "Specialized ML model", "On-premises LLM deployment"]
+    },
+    "chatgpt_api": {
+      "name": "ChatGPT / Off-the-shelf LLM API",
+      "description": "Direct integration with OpenAI ChatGPT, Anthropic Claude, Google Gemini, or similar third-party LLM APIs with prompt engineering",
+      "examples": ["OpenAI GPT-4o API", "Anthropic Claude API", "Google Gemini API", "Azure OpenAI Service"]
+    }
+  },
+  "dimensions": [
+    {
+      "name": "Time to first value",
+      "custom_ai":   { "rating": 2, "notes": "Weeks to months for data pipeline, model selection, fine-tuning, and integration" },
+      "chatgpt_api": { "rating": 5, "notes": "Hours to days; API key + prompt engineering + integration; quick proof of concept" }
+    },
+    {
+      "name": "Domain specificity",
+      "custom_ai":   { "rating": 5, "notes": "Fine-tuned on your data; understands proprietary terminology, processes, documents" },
+      "chatgpt_api": { "rating": 3, "notes": "General knowledge; requires detailed system prompts; RAG improves but adds complexity" }
+    },
+    {
+      "name": "Data privacy",
+      "custom_ai":   { "rating": 5, "notes": "Full control; on-premises or private cloud; no data leaves your environment" },
+      "chatgpt_api": { "rating": 2, "notes": "Data sent to third-party servers; enterprise agreements help but data residency concerns remain" }
+    },
+    {
+      "name": "Regulatory compliance (HIPAA, GDPR, SOC 2)",
+      "custom_ai":   { "rating": 5, "notes": "Fully controllable; can meet any compliance requirement with proper implementation" },
+      "chatgpt_api": { "rating": 3, "notes": "OpenAI/Azure offer BAAs and compliance certifications; still requires vendor trust" }
+    },
+    {
+      "name": "Ongoing cost at scale",
+      "custom_ai":   { "rating": 4, "notes": "High upfront; lower marginal cost at volume; fixed infrastructure vs per-token pricing" },
+      "chatgpt_api": { "rating": 2, "notes": "Per-token pricing scales linearly; high-volume usage can cost $10,000 to $100,000+/mo" }
+    },
+    {
+      "name": "Upfront investment",
+      "custom_ai":   { "rating": 2, "notes": "$50,000 to $500,000+ for full custom build; GPU infrastructure; ML engineering team" },
+      "chatgpt_api": { "rating": 5, "notes": "$0 to $5,000 to integrate; minimal engineering; pay only for usage" }
+    },
+    {
+      "name": "Model performance on general tasks",
+      "custom_ai":   { "rating": 3, "notes": "Depends on base model and fine-tuning quality; smaller models may underperform" },
+      "chatgpt_api": { "rating": 5, "notes": "Frontier models (GPT-4o, Claude 3.5) excel at general reasoning, writing, code" }
+    },
+    {
+      "name": "Customization and control",
+      "custom_ai":   { "rating": 5, "notes": "Full control of model behavior, outputs, guardrails, and integration" },
+      "chatgpt_api": { "rating": 2, "notes": "Limited to prompt engineering and fine-tuning; vendor controls model updates and policy" }
+    },
+    {
+      "name": "Vendor dependency risk",
+      "custom_ai":   { "rating": 5, "notes": "No single-vendor lock-in; model can be swapped or updated independently" },
+      "chatgpt_api": { "rating": 2, "notes": "API changes, pricing shifts, or deprecations require reactive engineering" }
+    },
+    {
+      "name": "Maintenance burden",
+      "custom_ai":   { "rating": 2, "notes": "Ongoing model retraining, infrastructure management, data pipeline maintenance required" },
+      "chatgpt_api": { "rating": 5, "notes": "Vendor handles model updates; engineering effort limited to prompt and integration changes" }
+    },
+    {
+      "name": "Integration with internal systems",
+      "custom_ai":   { "rating": 5, "notes": "Can be deeply embedded; direct database access, real-time data, custom APIs" },
+      "chatgpt_api": { "rating": 4, "notes": "Function calling and tool use enable integration; slightly more latency and complexity" }
+    },
+    {
+      "name": "Explainability and auditability",
+      "custom_ai":   { "rating": 4, "notes": "Possible with interpretability tools; log and audit every inference internally" },
+      "chatgpt_api": { "rating": 2, "notes": "Black-box vendor model; limited insight into why specific outputs were generated" }
+    }
+  ],
+  "use_case_recommendations": [
+    {
+      "use_case": "Proof of concept or pilot program",
+      "recommendation": "chatgpt_api",
+      "reason": "Fast to launch; validate business value before committing to custom build"
+    },
+    {
+      "use_case": "Healthcare or financial data processing (regulated)",
+      "recommendation": "custom_ai",
+      "reason": "Data sovereignty and compliance requirements make third-party APIs high-risk"
+    },
+    {
+      "use_case": "Customer support chatbot on general topics",
+      "recommendation": "chatgpt_api",
+      "reason": "Frontier models handle general queries well; RAG adds product-specific knowledge affordably"
+    },
+    {
+      "use_case": "Proprietary document analysis (legal, finance, engineering docs)",
+      "recommendation": "custom_ai",
+      "reason": "Fine-tuned model on domain corpus outperforms prompt-only approaches for specialized extraction"
+    },
+    {
+      "use_case": "High-volume, cost-sensitive automation",
+      "recommendation": "custom_ai",
+      "reason": "Per-token API costs at scale make self-hosted open-source models more economical"
+    },
+    {
+      "use_case": "Internal productivity tools for knowledge workers",
+      "recommendation": "chatgpt_api",
+      "reason": "Low volume, high quality needs; frontier model via API is fastest and highest quality path"
+    }
+  ],
+  "cost_model": {
+    "chatgpt_api": {
+      "setup_cost": "< $5,000",
+      "monthly_cost_low_volume": "$100 to $1,000",
+      "monthly_cost_high_volume": "$10,000 to $100,000+",
+      "pricing_model": "Per input/output token"
+    },
+    "custom_ai": {
+      "setup_cost": "$50,000 to $500,000+",
+      "monthly_infrastructure": "$2,000 to $20,000",
+      "monthly_marginal_cost": "Near-zero per query beyond infrastructure",
+      "pricing_model": "Fixed infrastructure + engineering team"
+    }
+  }
+}
